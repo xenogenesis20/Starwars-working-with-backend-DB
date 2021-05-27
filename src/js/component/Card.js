@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Details } from "../views/Details";
 
 export function Card(props) {
 	return (
@@ -20,7 +21,13 @@ export function Card(props) {
 					{props.label3}
 					{props.person.eye_color}
 				</p>
-				<Link to={"/Details/" + props.key}>
+				<Link
+					to={{
+						pathname: "/Details/" + props.ID,
+						state: {
+							props
+						}
+					}}>
 					<button className="btn btn-primary">Details</button>
 				</Link>
 				<button href="#" className="btn btn-primary">
@@ -38,5 +45,5 @@ Card.propTypes = {
 	label2: PropTypes.string,
 	label3: PropTypes.string,
 	cardImg: PropTypes.string,
-	key: PropTypes.number
+	ID: PropTypes.number
 };

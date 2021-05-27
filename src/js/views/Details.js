@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "../../styles/demo.scss";
 
-export const Details = props => {
+export const Details = () => {
+	const location = useLocation();
+	// const { person } = location.state.props.person;
+	// console.log(person);
+	console.log(location.state.props);
+	console.log(location.state.props.person);
+
 	return (
 		<div className="container">
-			<h1>Character Name</h1>
+			<h1>{location.state.props.person.name}</h1>
 			<div>
 				<img
 					className="detailImg"
@@ -24,20 +30,20 @@ export const Details = props => {
 			</div>
 
 			<ul className="list-group list-group-horizontal">
-				<li className="list-group-item">An item</li>
-				<li className="list-group-item">A second item</li>
-				<li className="list-group-item">A third item</li>
-				<li className="list-group-item">An item</li>
-				<li className="list-group-item">A second item</li>
-				<li className="list-group-item">A third item</li>
+				<li className="list-group-item flex-fill">{location.state.props.label1}</li>
+				<li className="list-group-item flex-fill">{location.state.props.label2}</li>
+				<li className="list-group-item flex-fill">{location.state.props.label3}</li>
+				<li className="list-group-item flex-fill">Skin Color:</li>
+				<li className="list-group-item flex-fill">Hair color: </li>
+				<li className="list-group-item flex-fill">Mass:</li>
 			</ul>
 			<ul className="list-group list-group-horizontal">
-				<li className="list-group-item">An item</li>
-				<li className="list-group-item">A second item</li>
-				<li className="list-group-item">A third item</li>
-				<li className="list-group-item">An item</li>
-				<li className="list-group-item">A second item</li>
-				<li className="list-group-item">A third item</li>
+				<li className="list-group-item flex-fill ">{location.state.props.person.height}</li>
+				<li className="list-group-item flex-fill">{location.state.props.person.gender}</li>
+				<li className="list-group-item flex-fill">{location.state.props.person.eye_color}</li>
+				<li className="list-group-item flex-fill">{location.state.props.person.skin_color}</li>
+				<li className="list-group-item flex-fill">{location.state.props.person.hair_color}</li>
+				<li className="list-group-item flex-fill">{location.state.props.person.mass}</li>
 			</ul>
 
 			<Link to="/">

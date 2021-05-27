@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export function Card(props) {
 	return (
@@ -19,9 +20,9 @@ export function Card(props) {
 					{props.label3}
 					{props.person.eye_color}
 				</p>
-				<button href="#" className="btn btn-primary">
-					Details
-				</button>
+				<Link to={"/Details/" + props.key}>
+					<button className="btn btn-primary">Details</button>
+				</Link>
 				<button href="#" className="btn btn-primary">
 					<i className="far fa-heart" />
 				</button>
@@ -36,5 +37,6 @@ Card.propTypes = {
 	label1: PropTypes.string,
 	label2: PropTypes.string,
 	label3: PropTypes.string,
-	cardImg: PropTypes.string
+	cardImg: PropTypes.string,
+	key: PropTypes.number
 };

@@ -1,6 +1,40 @@
 /* 
     General Styles
 */
+body{
+    background-image: url('https://i.ytimg.com/vi/UNOmaFs6KaY/maxresdefault.jpg');
+    
+    background-size: cover;
+
+}
+
+h1{
+    color: white;
+}
+// https://stackoverflow.com/questions/38901166/horizontal-scrollable-divs-in-a-bootstrap-row
+.scrolls > .row {
+ display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+p{
+    color: white;
+}
+.scrolls > .row > .col {
+  display: inline-block;
+}
+
+.card{
+    background-color: rgb(38, 38, 38);
+    color: white;
+}
+
+.star-bg{
+    background-image: url('https://i.ytimg.com/vi/UNOmaFs6KaY/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .navLogo{
     height: auto;
     width: 150px;

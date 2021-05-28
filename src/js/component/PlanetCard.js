@@ -3,27 +3,27 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Details } from "../views/Details";
 
-export function Card(props) {
+export function PlanetCard(props) {
 	return (
-		<div className="card col m-1" style={{ width: "225px" }}>
+		<div className="card col m-1" style={{ width: "250px" }}>
 			<img src={props.cardImg} className="card-img-top" alt="..." />
 			<div className="card-body">
-				<h5 className="card-title"> {props.person.name}</h5>
+				<h5 className="card-title"> {props.planet.name}</h5>
 				<p className="card-text">
 					{props.label1}
-					{props.person.height}
+					{props.planet.diameter}
 				</p>
 				<p className="card-text">
 					{props.label2}
-					{props.person.gender}
+					{props.planet.climate}
 				</p>
 				<p className="card-text">
 					{props.label3}
-					{props.person.eye_color}
+					{props.planet.terrain}
 				</p>
 				<Link
 					to={{
-						pathname: "/Details/" + props.ID,
+						pathname: "/PlanetDetails/" + props.ID,
 						state: {
 							props
 						}
@@ -38,8 +38,8 @@ export function Card(props) {
 	);
 }
 
-Card.propTypes = {
-	person: PropTypes.object,
+PlanetCard.propTypes = {
+	planet: PropTypes.object,
 	name: PropTypes.string,
 	label1: PropTypes.string,
 	label2: PropTypes.string,

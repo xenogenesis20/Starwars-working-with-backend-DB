@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import "../../styles/demo.scss";
 
-export const PlanetDetails = () => {
+export const VehicleDetails = () => {
 	const location = useLocation();
 	// const { person } = location.state.props.person;
 	// console.log(person);
@@ -12,7 +12,7 @@ export const PlanetDetails = () => {
 
 	return (
 		<div className="container ">
-			<h1>{location.state.props.planet.name}</h1>
+			<h1>{location.state.props.vehicles.name}</h1>
 			<div>
 				<img
 					className="detailImg"
@@ -30,22 +30,21 @@ export const PlanetDetails = () => {
 			</div>
 
 			<ul className="list-group list-group-horizontal">
-				<li className="list-group-item flex-fill">Orbital Period</li>
-				<li className="list-group-item flex-fill">Diameter</li>
-				<li className="list-group-item flex-fill">Climate</li>
-				<li className="list-group-item flex-fill">Gravity</li>
-				<li className="list-group-item flex-fill">Terrain</li>
-				<li className="list-group-item flex-fill">Population</li>
+				<li className="list-group-item flex-fill">Model</li>
+				<li className="list-group-item flex-fill">Manufacturer</li>
+				<li className="list-group-item flex-fill">Cost in credits</li>
+				<li className="list-group-item flex-fill">Length</li>
+				<li className="list-group-item flex-fill">Crew</li>
+				<li className="list-group-item flex-fill">Passengers</li>
 			</ul>
 			<ul className="list-group list-group-horizontal">
-				<li className="list-group-item flex-fill ">{location.state.props.planet.orbital_period}</li>
-				<li className="list-group-item flex-fill">{location.state.props.planet.diameter}</li>
-				<li className="list-group-item flex-fill">{location.state.props.planet.climate}</li>
-				<li className="list-group-item flex-fill">{location.state.props.planet.gravity}</li>
-				<li className="list-group-item flex-fill">{location.state.props.planet.terrain}</li>
-				<li className="list-group-item flex-fill">{location.state.props.planet.population}</li>
+				<li className="list-group-item flex-fill ">{location.state.props.vehicles.model}</li>
+				<li className="list-group-item flex-fill">{location.state.props.vehicles.manufacturer}</li>
+				<li className="list-group-item flex-fill">{location.state.props.vehicles.cost_in_credits}</li>
+				<li className="list-group-item flex-fill">{location.state.props.vehicles.length}</li>
+				<li className="list-group-item flex-fill">{location.state.props.vehicles.crew}</li>
+				<li className="list-group-item flex-fill">{location.state.props.vehicles.passengers}</li>
 			</ul>
-
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>

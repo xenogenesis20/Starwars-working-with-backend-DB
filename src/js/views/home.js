@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/home.scss";
 import { Card } from "../component/Card";
 import { PlanetCard } from "../component/PlanetCard";
+import { VehicleCard } from "../component/VehicleCard";
 
 export const Home = () => {
 	const [characters, setCharacters] = useState([]);
@@ -94,9 +95,26 @@ export const Home = () => {
 						))}
 				</div>
 			</div>
-			<div />
 			<div>
 				<h1>Vehicles</h1>
+				<div className="container scrolls">
+					<div className="row text-center">
+						{vehicles.length > 1 &&
+							vehicles.map((vehicles, index) => (
+								<VehicleCard
+									vehicles={vehicles}
+									key={index}
+									ID={index}
+									label1={"Model: "}
+									label2={"Cost in credits: "}
+									label3={"crew: "}
+									cardImg={
+										"https://www.cnet.com/a/img/zCS3dAJhSpM4Dk8Bee2Te8Uicu0=/1200x630/2020/01/09/f79a9662-35a4-4676-bbf6-b71a223e0a5c/ship-tie-razor-crest.jpg"
+									}
+								/>
+							))}
+					</div>
+				</div>
 			</div>
 		</div>
 	);

@@ -30,7 +30,7 @@ export function PlanetCard(props) {
 					}}>
 					<button className="btn btn-primary">Details</button>
 				</Link>
-				<button href="#" className="btn btn-primary">
+				<button href="#" className="btn btn-danger">
 					<i className="far fa-heart" />
 				</button>
 			</div>

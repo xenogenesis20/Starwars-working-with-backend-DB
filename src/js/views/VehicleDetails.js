@@ -16,7 +16,7 @@ export const VehicleDetails = () => {
 			<div>
 				<img
 					className="detailImg"
-					src="https://i.pinimg.com/originals/8a/a9/2c/8aa92c5ba570f0c8d50a97e6bce0a8ea.jpg"
+					src="https://3.bp.blogspot.com/-ujAKm5JrOpg/V_rTpH2l9uI/AAAAAAAAfQg/PWlcr3A1cf4qZLkT0aZOegskl2DGXfK7gCLcB/s1600/poeship3.jpg"
 				/>
 				<p>
 					Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of

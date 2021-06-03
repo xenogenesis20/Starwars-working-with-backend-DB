@@ -5,7 +5,7 @@ import { Details } from "../views/Details";
 
 export function VehicleCard(props) {
 	return (
-		<div className="card col m-1" style={{ width: "250px" }}>
+		<div className="card col m-1" style={{ width: "350px" }}>
 			<img src={props.cardImg} className="card-img-top" alt="..." />
 			<div className="card-body">
 				<h5 className="card-title"> {props.vehicles.name}</h5>
@@ -30,7 +30,7 @@ export function VehicleCard(props) {
 					}}>
 					<button className="btn btn-primary">Details</button>
 				</Link>
-				<button href="#" className="btn btn-primary">
+				<button href="#" className="btn btn-danger">
 					<i className="far fa-heart" />
 				</button>
 			</div>

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Details } from "../views/Details";
+import { Context } from "../store/appContext";
 
 export function VehicleCard(props) {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="card col m-1" style={{ width: "350px" }}>
 			<img src={props.cardImg} className="card-img-top" alt="..." />
@@ -30,7 +32,7 @@ export function VehicleCard(props) {
 					}}>
 					<button className="btn btn-primary">Details</button>
 				</Link>
-				<button href="#" className="btn btn-danger">
+				<button onClick={() => actions.addFavorite(props.vehicles.name)} className="btn btn-danger">
 					<i className="far fa-heart" />
 				</button>
 			</div>

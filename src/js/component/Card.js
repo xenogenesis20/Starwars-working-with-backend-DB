@@ -6,6 +6,10 @@ import { Context } from "../store/appContext";
 
 export function Card(props) {
 	const { store, actions } = useContext(Context);
+
+	let found = store.favorites.find(elem => elem == props.person.name);
+	// console.log(found);
+
 	return (
 		<div className="card col m-1" style={{ width: "225px" }}>
 			<img src={props.cardImg} className="card-img-top" alt="..." />
@@ -32,8 +36,10 @@ export function Card(props) {
 					}}>
 					<button className="btn btn-primary">Details</button>
 				</Link>
-				<button onClick={() => actions.addFavorite(props.person.name)} className="btn btn-danger">
-					<i className="far fa-heart" />
+				<button
+					onClick={found ? null : () => actions.addFavorite(props.person.name)}
+					className="btn btn-danger">
+					{found ? <i className="fas fa-heart" /> : <i className="far fa-heart" />}
 				</button>
 			</div>
 		</div>

@@ -7,7 +7,7 @@ import { Context } from "../store/appContext";
 export function Card(props) {
 	const { store, actions } = useContext(Context);
 
-	let found = store.favorites.find(elem => elem == props.person.name);
+	let found = store.favorites && store.favorites.find(elem => elem.name == props.person.name);
 	// console.log(found);
 
 	return (
@@ -29,7 +29,7 @@ export function Card(props) {
 				</p>
 				<Link
 					to={{
-						pathname: "/Details/" + props.ID,
+						pathname: "/Details/" + props.id,
 						state: {
 							props
 						}
@@ -37,7 +37,7 @@ export function Card(props) {
 					<button className="btn btn-primary">Details</button>
 				</Link>
 				<button
-					onClick={found ? null : () => actions.addFavorite(props.person.name)}
+					onClick={found ? null : () => actions.addFavorite(props.person.name, props.id, "person")}
 					className="btn btn-danger">
 					{found ? <i className="fas fa-heart" /> : <i className="far fa-heart" />}
 				</button>
@@ -53,5 +53,5 @@ Card.propTypes = {
 	label2: PropTypes.string,
 	label3: PropTypes.string,
 	cardImg: PropTypes.string,
-	ID: PropTypes.number
+	id: PropTypes.number
 };

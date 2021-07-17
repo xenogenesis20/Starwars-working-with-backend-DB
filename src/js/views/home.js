@@ -67,7 +67,7 @@ export const Home = () => {
 							<Card
 								person={character}
 								key={index}
-								ID={index}
+								id={index}
 								label1={"Height: "}
 								label2={"Gender: "}
 								label3={"Eye Color: "}

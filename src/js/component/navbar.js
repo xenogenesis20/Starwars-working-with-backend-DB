@@ -26,15 +26,17 @@ export const Navbar = () => {
 					data-toggle="dropdown"
 					aria-haspopup="true"
 					aria-expanded={clickedDropDown}>
-					Favorites <span className="badge badge-light">{store.favorites.length}</span>
+					Favorites <span className="badge badge-light">{store.favorites ? store.favorites.length : ""}</span>
 				</button>
 				<div
-					className={store.favorites.length > 0 ? "dropdown-menu bg-light " + show : "d-none"}
+					className={
+						store.favorites && store.favorites.length > 0 ? "dropdown-menu bg-light " + show : "d-none"
+					}
 					aria-labelledby="dropdownMenuButton">
 					{store.favorites.map((fav, i) => {
 						return (
 							<li className="dropdown-item" key={i}>
-								{fav}
+								{fav.name}
 							</li>
 						);
 					})}
